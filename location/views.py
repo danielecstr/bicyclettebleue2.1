@@ -230,8 +230,8 @@ def modifierlocation(request, pk):
 @staff_member_required
 @login_required(login_url='/compte/login')
 def supprimerLocation(request, pk):
-    location = Location.objects.get(loc_num=pk)
-    locationVelo = Location_Velo.objects.get(loc_num=pk)
+    location = Location.objects.get(loc_id=pk)
+    locationVelo = Location_Velo.objects.get(loc_id=pk)
     if request.method=='POST':
         locationVelo.lv_vel_id.vel_statut = "Libre"
         locationVelo.lv_vel_id.save()
