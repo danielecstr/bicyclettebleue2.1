@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     'django_filters',
     'reparation',
     'statistique',
+    'bootstrap_datepicker_plus',
     'cal.apps.CalConfig', # fatma
 ]
 
