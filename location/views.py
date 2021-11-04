@@ -44,7 +44,7 @@ def location(request):
     messageMail = 'Bonjour, nous vous envoyons ce mail pour vous prévenir que votre location se termine dans 10 jours.' \
                   '\nVeuillez ne pas oublier de rendre votre vélo ou prolonger votre location depuis notre site : http://danielecstr.pythonanywhere.com/.' \
                   "\n\nToute l'équipe Bicyclette Bleue vous souhaite une bonne journée."
-    #send_mail('La bicycletteBleue', messageMail , settings.EMAIL_HOST_USER, listeMail, fail_silently=False)
+    send_mail('La bicycletteBleue', messageMail , settings.EMAIL_HOST_USER, listeMail, fail_silently=False)
 
     #Liste des locations
     locations = []
@@ -113,7 +113,7 @@ def confirmationLocation(request, pk):
         location.save()
 
         #Permet d'envoyer un mail selon la décision du membre
-        #send_mail('La bicycletteBleue', messageMail , settings.EMAIL_HOST_USER, [location.loc_client.cli_mail], fail_silently=False)
+        send_mail('La bicycletteBleue', messageMail , settings.EMAIL_HOST_USER, [location.loc_client.cli_mail], fail_silently=False)
 
         return redirect('/location/locationEnAttente')
 
@@ -257,7 +257,7 @@ def refuseLocationEnAttente(request, pk):
         else:
             messageMail = "Votre demande de location à bien été refusé"
 
-        #send_mail('La bicycletteBleue', messageMail , settings.EMAIL_HOST_USER, [location.loc_client.cli_mail], fail_silently=False)
+        send_mail('La bicycletteBleue', messageMail , settings.EMAIL_HOST_USER, [location.loc_client.cli_mail], fail_silently=False)
 
         if location.loc_statut == "Demande de diminution" or location.loc_statut == "Demande de prolongation":
             location.loc_statut = "En cours"
