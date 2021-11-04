@@ -8,5 +8,7 @@ pip install django-mathfilters
 
 pip install jsmin
 
+pip install django-bootstrap-datepicker-plus
+
 python -m pip install Pillow
 
