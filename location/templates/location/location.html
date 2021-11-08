@@ -42,7 +42,7 @@ Auteur : Daniele Castro
   {% for loc in locations %}
     <tr>
       <th scope="row">{{ loc.lv_loc_id.loc_num}}</th>
-      <td><a href="{% url 'location:detailsLocation' loc.loc_num %}">{{ loc.lv_loc_id.loc_statut}}</a></td>
+      <td><a href="{% url 'location:detailsLocation' 1 %}">{{ loc.lv_loc_id.loc_statut}}</a></td>
       <td><a>{{loc.lv_loc_id.loc_client.cli_nom}} {{loc.lv_loc_id.loc_client.cli_prenom}}</a></td>
       <td>{{loc.lv_vel_id.vel_nom}}</td>
       <td>{{loc.date_debut}}</td>
